@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>S&amp;P 500 Corporate Stack</title>
+<style>
+  :root { --bg:#0f172a; --card:#1e293b; --line:#334155; --txt:#e2e8f0;
+          --mut:#94a3b8; --acc:#38bdf8; --grn:#4ade80; --amb:#fbbf24; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+         background:var(--bg); color:var(--txt); }
+  header { padding:40px 24px 24px; max-width:1100px; margin:0 auto; }
+  h1 { margin:0 0 8px; font-size:32px; letter-spacing:-0.5px; }
+  h1 .amp { color:var(--acc); }
+  p.sub { color:var(--mut); max-width:760px; line-height:1.6; margin:0; }
+  .controls { display:flex; gap:16px; flex-wrap:wrap; padding:20px 24px;
+              max-width:1100px; margin:0 auto; }
+  .controls label { display:flex; flex-direction:column; gap:6px; font-size:13px;
+                    color:var(--mut); }
+  select { background:var(--card); color:var(--txt); border:1px solid var(--line);
+           border-radius:8px; padding:10px 12px; font-size:15px; min-width:240px; }
+  .summary { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+             gap:12px; padding:8px 24px 20px; max-width:1100px; margin:0 auto; }
+  .stat { background:var(--card); border:1px solid var(--line); border-radius:12px;
+          padding:16px; }
+  .stat .v { font-size:26px; font-weight:700; }
+  .stat .l { font-size:12px; color:var(--mut); margin-top:4px; }
+  .cov { max-width:1100px; margin:0 auto; padding:0 24px 8px; }
+  .bar { display:flex; height:14px; border-radius:7px; overflow:hidden;
+         background:var(--card); border:1px solid var(--line); }
+  .bar div.m { background:var(--grn); } .bar div.i { background:var(--amb); }
+  .bar div.u { background:#475569; }
+  .cov-legend { display:flex; gap:18px; font-size:13px; color:var(--mut);
+                margin-top:8px; flex-wrap:wrap; }
+  .dot { display:inline-block; width:10px; height:10px; border-radius:50%;
+         margin-right:6px; }
+  table { width:100%; border-collapse:collapse; font-size:14px; }
+  .tblwrap { max-width:1100px; margin:12px auto 40px; padding:0 24px; }
+  th { text-align:left; color:var(--mut); font-weight:600; font-size:12px;
+       text-transform:uppercase; letter-spacing:0.5px; padding:10px 12px;
+       border-bottom:1px solid var(--line); }
+  td { padding:10px 12px; border-bottom:1px solid #1e293b; vertical-align:top; }
+  tr:hover td { background:#16213a; }
+  .tick { font-family:ui-monospace,monospace; color:var(--acc); font-weight:700; }
+  .spend { text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap; }
+  footer { max-width:1100px; margin:0 auto; padding:0 24px 48px; color:var(--mut);
+           font-size:13px; line-height:1.7; }
+  footer a { color:var(--acc); }
+</style>
+</head>
+<body>
+<header>
+  <h1>S<span class="amp">&amp;</span>P 500 Corporate Stack</h1>
+  <p class="sub">A reference architecture for new businesses: every capability a
+  company needs, mapped to vendors inside the S&amp;P 500, diversified so no
+  single vendor dominates. Pick a size and industry to see the recommended
+  stack, the estimated spend, and how much of it flows to index vendors.</p>
+</header>
+
+<div class="controls">
+  <label>Company size
+    <select id="size">
+      <option value="startup">Startup (1-50 employees)</option>
+      <option value="smb" selected>SMB (51-500 employees)</option>
+      <option value="midmarket">Mid-market (501-5,000 employees)</option>
+      <option value="enterprise">Enterprise (5,000+ employees)</option>
+    </select>
+  </label>
+  <label>Industry
+    <select id="industry">
+      <option value="technology" selected>Technology</option>
+      <option value="financial_services">Financial Services</option>
+      <option value="healthcare">Healthcare</option>
+      <option value="retail">Retail</option>
+      <option value="manufacturing">Manufacturing</option>
+      <option value="hospitality">Hospitality</option>
+      <option value="professional_services">Professional Services</option>
+    </select>
+  </label>
+</div>
+
+<div class="summary" id="summary"></div>
+
+<div class="cov">
+  <div class="bar" id="covbar"></div>
+  <div class="cov-legend" id="covlegend"></div>
+</div>
+
+<div class="tblwrap">
+  <table>
+    <thead><tr><th>Capability</th><th>Vendor</th><th>Product</th>
+    <th style="text-align:right">Est. annual spend</th></tr></thead>
+    <tbody id="rows"></tbody>
+  </table>
+</div>
+
+<footer>
+  <p>Spend figures are order-of-magnitude estimates for planning, not quotes.
+  Coverage is reported honestly: of 500 index companies, a meaningful share
+  sells nothing a business can buy. Unmapped categories are shown, not hidden.
+  Read the full methodology and the flywheel thesis in the
+  <a href="https://github.com/Frozen-In-Flames/sp500-corporate-stack">GitHub repo</a>.
+  Not investment advice.</p>
+</footer>
+
+<script src="stack_data.js"></script>
+<script>
+var D = window.SP500_STACK_DATA;
+function fmt(n){ return "$" + n.toLocaleString("en-US"); }
+function render(){
+  var key = document.getElementById("size").value + "__" +
+            document.getElementById("industry").value;
+  var r = D[key], cov = D._meta.coverage.by_status;
+  var top = r.top_vendor_concentration;
+  document.getElementById("summary").innerHTML = [
+    ["v", r.categories_covered, "Capabilities covered"],
+    ["v", r.sp500_vendors_used, "S&P 500 vendors used"],
+    ["v", fmt(r.estimated_total_annual_spend_usd), "Est. total annual spend"],
+    ["v", fmt(r.estimated_sp500_revenue_directed_usd), "Revenue directed to S&P 500"],
+    ["v", top.ticker + " " + Math.round(top.share_of_total*100) + "%",
+     "Top vendor concentration"]
+  ].map(function(s){
+    return '<div class="stat"><div class="v">'+s[1]+'</div><div class="l">'+s[2]+'</div></div>';
+  }).join("");
+  var tot = cov.mapped + cov.indirect + cov.unmapped;
+  document.getElementById("covbar").innerHTML =
+    '<div class="m" style="width:'+(cov.mapped/tot*100)+'%"></div>' +
+    '<div class="i" style="width:'+(cov.indirect/tot*100)+'%"></div>' +
+    '<div class="u" style="width:'+(cov.unmapped/tot*100)+'%"></div>';
+  document.getElementById("covlegend").innerHTML =
+    '<span><span class="dot" style="background:#4ade80"></span>Mapped: '+cov.mapped+'</span>' +
+    '<span><span class="dot" style="background:#fbbf24"></span>Indirect (perks): '+cov.indirect+'</span>' +
+    '<span><span class="dot" style="background:#475569"></span>Unmapped: '+cov.unmapped+'</span>';
+  document.getElementById("rows").innerHTML = r.stack.map(function(s){
+    return "<tr><td>"+s.category_name+"</td>"+
+      '<td><span class="tick">'+s.ticker+"</span> "+s.vendor+"</td>"+
+      "<td>"+s.product+"</td>"+
+      '<td class="spend">'+fmt(s.estimated_annual_spend_usd)+"</td></tr>";
+  }).join("");
+}
+document.getElementById("size").addEventListener("change", render);
+document.getElementById("industry").addEventListener("change", render);
+render();
+</script>
+</body>
+</html>
