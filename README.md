@@ -7,6 +7,19 @@ insurance, shipping, travel, legal, and the rest). Route that spend through
 index vendors and the operating budget becomes diversified revenue for S&P 500
 companies, which is the flywheel described in [flywheel.md](flywheel.md).
 
+## v0.2.0: the shelf is executable
+
+Twelve S&P 500 vendors now sit behind one shared adapter interface in
+`integrations/`, each with a real developer API wired for live calls and a
+fixture-backed demo mode that runs with $0 and no credentials. Two
+cross-vendor workflows ship in `workflows/`: new-employee onboarding across
+five vendors (Microsoft, Alphabet, Salesforce, Twilio, Adobe) and
+order-to-cash across four (PayPal, FedEx, Intuit, Cisco). Run them with
+`python3 -m integrations.shelf run onboarding`. The demo page has a V2
+panel with the vendor grid and a recorded run of the onboarding workflow.
+Full contract, env key table, and honest limits are in
+[INTEGRATIONS.md](INTEGRATIONS.md).
+
 ## Honest coverage numbers (v0.1.0)
 
 Of 500 index companies (503 index lines; Alphabet, Fox Corp, and News Corp
@@ -63,6 +76,10 @@ industry to explore the recommended stack.
 - `demo/`: static demo page plus generated data.
 - `flywheel.md`: the business model, including an honest account of where the
   loop is strong and where it is narrative.
+- `integrations/`: v0.2.0 executable shelf, twelve vendor adapters behind one
+  contract, demo mode by default, live mode via env keys.
+- `workflows/`: v0.2.0 cross-vendor workflows (onboarding, order-to-cash).
+- `INTEGRATIONS.md`: the adapter contract, env key table, and honest limits.
 
 ## Data sources
 

@@ -33,6 +33,18 @@ A new business needs roughly sixty categories of products and services to operat
 
 In return they get placement in front of every adopting company and the compounding credibility of being the index's default in their category.
 
+## v0.2.0 addendum: the shelf is now executable
+
+The collective-action problem named above, vendors each preferring the
+stack to favor them alone, is now answered in working code rather than
+argument. Twelve index vendors sit behind one shared adapter interface;
+two workflows run end to end across five and four vendors respectively,
+each step handled by whichever vendor is best at it, no vendor owning the
+workflow. Maintaining an adapter is how a vendor opts into the shelf:
+certification is a pull request, not a badge. The honest limits still
+apply, twelve vendors prove the pattern rather than complete it, and the
+mapped set of 278 is what the pattern scales across.
+
 ## What this is not
 
 It is not an index fund, not investment advice, and not a claim that buying from index vendors moves stock prices directly. Corporate revenue is one input among many into earnings. The flywheel is a demand-routing mechanism with a shareholder-aligned incentive story, published as open data so anyone can check the mappings.

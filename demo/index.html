@@ -47,6 +47,27 @@
   footer { max-width:1100px; margin:0 auto; padding:0 24px 48px; color:var(--mut);
            font-size:13px; line-height:1.7; }
   footer a { color:var(--acc); }
+  .v2 { max-width:1100px; margin:0 auto; padding:8px 24px 32px; }
+  .v2 h2 { font-size:22px; margin:28px 0 8px; }
+  .v2 code { background:#0b1220; padding:2px 6px; border-radius:6px;
+             font-size:13px; }
+  .shelfgrid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
+               gap:12px; margin-top:16px; }
+  .scard { background:var(--card); border:1px solid var(--line);
+           border-radius:12px; padding:14px; }
+  .scard .v { font-weight:700; font-size:15px; }
+  .scard .c { font-size:12px; color:var(--acc); margin-top:2px; }
+  .scard .p { font-size:13px; color:var(--mut); margin-top:6px; line-height:1.5; }
+  .scard .k { font-size:11px; color:var(--mut); margin-top:8px;
+              font-family:ui-monospace,monospace; }
+  #wfrun { background:var(--acc); color:#0f172a; border:none; border-radius:8px;
+           padding:12px 20px; font-size:15px; font-weight:700; cursor:pointer;
+           margin-top:12px; }
+  #wfrun:disabled { opacity:0.5; cursor:default; }
+  .wflog { margin-top:16px; background:#0b1220; border:1px solid var(--line);
+           border-radius:12px; padding:16px; font-family:ui-monospace,monospace;
+           font-size:13px; line-height:1.9; min-height:60px; }
+  .wflog .ok { color:var(--grn); } .wflog .vn { color:var(--acc); }
 </style>
 </head>
 <body>
@@ -96,6 +117,29 @@
 </div>
 
 <footer>
+  <p><strong>v0.2.0: the shelf is executable.</strong> Twelve S&amp;P 500
+  vendors now sit behind one shared adapter interface, each with a real
+  developer API wired for live calls and a fixture-backed demo mode that
+  runs with no credentials and no spend. Below is the live shelf grid and a
+  recorded run of the new-employee onboarding workflow: five vendors, one
+  workflow, no vendor owning the shelf.</p>
+</footer>
+
+<section class="v2">
+  <h2>The shared shelf (v0.2.0)</h2>
+  <p class="sub">Twelve index vendors behind one adapter contract.
+  Every adapter runs in demo mode with $0 and no credentials; live mode
+  activates when its API key is set. No keys are committed.</p>
+  <div class="shelfgrid" id="shelfgrid"></div>
+  <h2>Workflow: new-employee onboarding</h2>
+  <p class="sub">Recorded demo-mode run of
+  <code>python3 -m integrations.shelf run onboarding</code>, captured from the
+  real Python workflow. Press run to step through it.</p>
+  <button id="wfrun">Run the onboarding workflow</button>
+  <div class="wflog" id="wflog"></div>
+</section>
+
+<footer>
   <p>Spend figures are order-of-magnitude estimates for planning, not quotes.
   Coverage is reported honestly: of 500 index companies, a meaningful share
   sells nothing a business can buy. Unmapped categories are shown, not hidden.
@@ -105,6 +149,8 @@
 </footer>
 
 <script src="stack_data.js"></script>
+<script src="shelf_data.js"></script>
+<script src="workflow_transcript.js"></script>
 <script>
 var D = window.SP500_STACK_DATA;
 function fmt(n){ return "$" + n.toLocaleString("en-US"); }
@@ -142,6 +188,40 @@ function render(){
 document.getElementById("size").addEventListener("change", render);
 document.getElementById("industry").addEventListener("change", render);
 render();
+
+/* v0.2.0 shelf grid and recorded workflow run */
+(function(){
+  var shelf = window.SHELF || [];
+  document.getElementById("shelfgrid").innerHTML = shelf.map(function(a){
+    return '<div class="scard"><div class="v"><span class="tick">'+a.ticker+
+      "</span> "+a.vendor+"</div>"+
+      '<div class="c">'+a.category+"</div>"+
+      '<div class="p">'+a.product+"<br>"+a.api+"</div>"+
+      '<div class="k">live: '+a.env_keys.join(", ")+"</div></div>";
+  }).join("");
+  var t = window.WORKFLOW_TRANSCRIPT;
+  var log = document.getElementById("wflog");
+  var btn = document.getElementById("wfrun");
+  log.innerHTML = '<span style="color:#94a3b8">Recorded demo-mode run. '+
+    "Press run.</span>";
+  btn.addEventListener("click", function(){
+    btn.disabled = true; log.innerHTML = "";
+    var i = 0;
+    function step(){
+      if (i >= t.steps.length) {
+        log.innerHTML += '<br><span class="ok">Done: '+t.steps.length+
+          " steps, "+t.vendors.length+" vendors ("+t.vendors.join(", ")+
+          "), modes: "+t.modes.join(", ")+"</span>";
+        return;
+      }
+      var s = t.steps[i];
+      log.innerHTML += '<span class="ok">[DEMO]</span> '+s.action+
+        " handled by <span class=\"vn\">"+s.vendor+" ("+s.ticker+")</span><br>";
+      i++; setTimeout(step, 700);
+    }
+    step();
+  });
+})();
 </script>
 </body>
 </html>
