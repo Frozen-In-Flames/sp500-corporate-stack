@@ -1,0 +1,63 @@
+{
+  "source": "SEC EDGAR companyfacts (data.sec.gov)",
+  "label": "Total assets from the latest 10-K, used as a labeled proxy for property portfolio scale. Not an appraised property value.",
+  "pulled_at": "2026-10-14T02:13:28.480274+00:00",
+  "reits": {
+    "CPT": {
+      "name": "Camden Property Trust",
+      "cik": "0000906345",
+      "total_assets_usd": 9042989000.0,
+      "filing_period_end": "2025-12-31",
+      "form": "10-K"
+    },
+    "ESS": {
+      "name": "Essex Property Trust",
+      "cik": "0000920522",
+      "total_assets_usd": 13159009000.0,
+      "filing_period_end": "2025-12-31",
+      "form": "10-K"
+    },
+    "HST": {
+      "name": "Host Hotels & Resorts",
+      "cik": "0001070750",
+      "total_assets_usd": 13049000000.0,
+      "filing_period_end": "2025-12-31",
+      "form": "10-K"
+    },
+    "INVH": {
+      "name": "Invitation Homes",
+      "cik": "0001687229",
+      "total_assets_usd": 18680290000.0,
+      "filing_period_end": "2025-12-31",
+      "form": "10-K"
+    },
+    "MAA": {
+      "name": "Mid-America Apartment Communities",
+      "cik": "0000912595",
+      "total_assets_usd": 11975383000.0,
+      "filing_period_end": "2025-12-31",
+      "form": "10-K"
+    },
+    "UDR": {
+      "name": "UDR Inc.",
+      "cik": "0000074208",
+      "total_assets_usd": 10605674000.0,
+      "filing_period_end": "2025-12-31",
+      "form": "10-K"
+    },
+    "VMRK": {
+      "name": "Vivmark Residential",
+      "cik": "0000906107",
+      "total_assets_usd": 20746023000.0,
+      "filing_period_end": "2025-12-31",
+      "form": "10-K"
+    },
+    "WY": {
+      "name": "Weyerhaeuser",
+      "cik": "0000106535",
+      "total_assets_usd": 16613000000.0,
+      "filing_period_end": "2025-12-31",
+      "form": "10-K"
+    }
+  }
+}

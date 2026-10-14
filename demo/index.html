@@ -168,6 +168,26 @@
   honestly serve as employee perks.</p>
 </footer>
 
+<section class="v2">
+  <h2>Tier 3, quantified (v0.4.0)</h2>
+  <p class="sub" id="tier3src">The 190 companies with no routable corporate
+  spend are not $0 of economic reality. Federal award dollars come from
+  USAspending.gov (federal obligations only, by recipient name); REIT scale
+  comes from total assets in the latest 10-K on SEC EDGAR, a labeled proxy
+  for property portfolio size, never an appraised value.</p>
+  <div class="cov" style="padding:0 0 16px">
+    <div class="bar" id="tier3bar"></div>
+  </div>
+  <div id="tier3cards" style="display:grid;gap:12px"></div>
+</section>
+
+<footer>
+  <p>Federal figures are obligated award dollars matched by recipient name;
+  state and local spending is excluded. REIT figures are 10-K total assets,
+  a scale proxy, not appraised property values. Run
+  <span class="tick">stack_builder.py --tier3</span> for a live pull.</p>
+</footer>
+
 <script src="stack_data.js"></script>
 <script src="shelf_data.js"></script>
 <script src="workflow_transcript.js"></script>
@@ -264,6 +284,53 @@ render();
           : "$0 (none)")+"</div>"+
       '<div class="p">'+t.meaning+"</div>"+
       '<div class="k">Examples:<br>'+ex+"</div></div>";
+  }).join("");
+})();
+(function(){
+  var t3 = D._meta.tier3;
+  if (!t3) return;
+  document.getElementById("tier3src").innerHTML =
+    "The 190 companies with no routable corporate spend are not $0 of " +
+    "economic reality. <b>" + t3.source_label + "</b>. Federal award " +
+    "dollars are federal obligations only (state/local excluded); REIT " +
+    "scale is 10-K total assets, a labeled proxy, never appraised value.";
+  var groups = Object.keys(t3.groups).map(function(k){
+    var g = t3.groups[k];
+    var awards = g.members.reduce(function(s, c){
+      return s + (c.awards_latest_fy_usd || 0); }, 0);
+    var assets = g.members.reduce(function(s, c){
+      return s + (c.reit_total_assets_usd || 0); }, 0);
+    return {code: k, n: g.companies, awards: awards, assets: assets,
+            members: g.members};
+  });
+  var maxv = Math.max.apply(null, groups.map(function(g){
+    return Math.max(g.awards, g.assets); }));
+  var colors = {defense_gov: "#f87171", reit: "#60a5fa", pharma: "#c084fc",
+                semis: "#4ade80", commodities: "#fbbf24", other: "#94a3b8"};
+  document.getElementById("tier3bar").innerHTML = groups.map(function(g){
+    return '<div title="'+g.code+": "+g.n+' companies" style="background:'+
+      (colors[g.code] || "#94a3b8")+";width:"+(g.n/190*100)+'%"></div>';
+  }).join("");
+  function money(v){
+    if (!v) return "$0";
+    if (v >= 1e9) return "$"+(v/1e9).toFixed(1)+"B";
+    if (v >= 1e6) return "$"+(v/1e6).toFixed(1)+"M";
+    return "$"+Math.round(v).toLocaleString("en-US");
+  }
+  document.getElementById("tier3cards").innerHTML = groups.map(function(g){
+    var w = maxv ? Math.max(g.awards, g.assets)/maxv*100 : 0;
+    var chips = g.members.slice(0, 10).map(function(c){
+      return '<span class="tick">'+c.ticker+"</span>";
+    }).join(" ") + (g.members.length > 10
+      ? ' <span class="k">+'+(g.members.length-10)+" more</span>" : "");
+    return '<div class="scard" style="border-left:4px solid '+
+      (colors[g.code] || "#94a3b8")+'">'+
+      '<div class="v">'+g.code+": "+g.n+" companies</div>"+
+      '<div class="c">Federal FY'+t3.latest_fy+": "+money(g.awards)+
+      " &nbsp;|&nbsp; REIT assets: "+money(g.assets)+"</div>"+
+      '<div class="bar" style="height:8px;margin:6px 0"><div style="background:'+
+      (colors[g.code] || "#94a3b8")+";width:"+w+'%"></div></div>'+
+      '<div class="k">'+chips+"</div></div>";
   }).join("");
 })();
 </script>

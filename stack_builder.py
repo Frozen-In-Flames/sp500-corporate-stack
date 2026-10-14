@@ -11,6 +11,7 @@ Usage:
   python3 stack_builder.py --size enterprise --industry retail --format json
   python3 stack_builder.py --coverage
   python3 stack_builder.py --relativity [--size smb] [--industry technology]
+  python3 stack_builder.py --tier3 [--refresh] [--format json]
   python3 stack_builder.py --emit-demo-data --out demo/stack_data.js
 """
 
@@ -301,7 +302,9 @@ TIER_MEANING = {
                     "and defense contractors selling only to governments. No "
                     "honest channel exists to route company spend to them. "
                     "This is the boundary of the model, and naming it is "
-                    "what keeps the other two tiers credible."),
+                    "what keeps the other two tiers credible. Run "
+                    "--tier3 for the quantified breakdown: live federal "
+                    "awards (USAspending) and REIT assets (SEC EDGAR)."),
     },
 }
 
@@ -363,6 +366,108 @@ def relativity_report(mappings, perk_categories, size_band="smb",
     }
 
 
+def tier3_report(mappings, tier3_data, provenance):
+    """Quantified tier-3 breakdown: the 190 grouped by reason code with
+    federal award totals and REIT asset values.
+
+    tier3_data: {"awards": gov_awards_doc, "reits": reit_values_doc}.
+    provenance: "live" or "cached:<pulled_at>". Pure function: all network
+    access happens in live_data.get_tier3_data, never here.
+    """
+    awards_doc = tier3_data["awards"] or {}
+    reits_doc = tier3_data["reits"] or {}
+    fys = awards_doc.get("fiscal_years", [])
+    latest_fy = str(max(fys)) if fys else None
+    award_cos = awards_doc.get("companies", {})
+    reit_vals = reits_doc.get("reits", {})
+
+    groups = defaultdict(list)
+    total_awards_latest = 0.0
+    total_reit_assets = 0.0
+    for m in sorted(mappings, key=lambda m: m["ticker"]):
+        if m.get("status") != "unmapped":
+            continue
+        code = m.get("reason_code", "other")
+        t = m["ticker"]
+        a = award_cos.get(t, {})
+        by_year = {str(k): v for k, v in (a.get("by_year") or {}).items()}
+        latest = by_year.get(latest_fy) if latest_fy else None
+        if isinstance(latest, (int, float)):
+            total_awards_latest += latest
+        r = reit_vals.get(t, {})
+        assets = r.get("total_assets_usd")
+        if isinstance(assets, (int, float)):
+            total_reit_assets += assets
+        groups[code].append({
+            "ticker": t,
+            "name": m["name"],
+            "note": m.get("note", ""),
+            "awards_by_fy_usd": by_year,
+            "awards_latest_fy_usd": latest,
+            "awards_match_method": a.get("match_method"),
+            "reit_total_assets_usd": assets,
+            "reit_filing_period_end": r.get("filing_period_end"),
+        })
+
+    if provenance == "live":
+        source_label = "LIVE figures pulled just now"
+    else:
+        stamp = provenance.split(":", 1)[1] if ":" in provenance else "unknown"
+        source_label = "CACHED figures as of " + stamp
+    return {
+        "tier": "tier3",
+        "companies": sum(len(v) for v in groups.values()),
+        "fiscal_years": fys,
+        "source_label": source_label,
+        "awards_source_label": awards_doc.get("label", ""),
+        "reit_source_label": reits_doc.get("label", ""),
+        "total_federal_awards_latest_fy_usd": round(total_awards_latest, 2),
+        "latest_fy": latest_fy,
+        "combined_reit_assets_usd": round(total_reit_assets, 2),
+        "groups": {code: {"companies": len(v), "members": v}
+                   for code, v in sorted(groups.items())},
+    }
+
+
+def _usd(v):
+    if isinstance(v, (int, float)):
+        return "$%s" % f"{v:,.0f}"
+    return "n/a"
+
+
+def print_tier3_text(rep):
+    print("S&P 500 Corporate Stack: tier 3 quantified")
+    print("%d companies | %s" % (rep["companies"], rep["source_label"]))
+    print("Awards: %s" % rep["awards_source_label"][:100])
+    print("REITs: %s" % rep["reit_source_label"][:100])
+    print()
+    print("Total federal awards (FY%s): %s" % (
+        rep["latest_fy"], _usd(rep["total_federal_awards_latest_fy_usd"])))
+    print("Combined REIT total assets (latest 10-K): %s" % (
+        _usd(rep["combined_reit_assets_usd"])))
+    print()
+    for code, g in rep["groups"].items():
+        g_awards = sum((c["awards_latest_fy_usd"] or 0)
+                       for c in g["members"])
+        g_assets = sum((c["reit_total_assets_usd"] or 0)
+                       for c in g["members"])
+        print("%s: %d companies | federal FY%s %s | REIT assets %s" % (
+            code, g["companies"], rep["latest_fy"],
+            _usd(g_awards), _usd(g_assets)))
+        for c in g["members"][:8]:
+            bits = []
+            if isinstance(c["awards_latest_fy_usd"], (int, float)):
+                bits.append("fed FY%s %s" % (
+                    rep["latest_fy"], _usd(c["awards_latest_fy_usd"])))
+            if isinstance(c["reit_total_assets_usd"], (int, float)):
+                bits.append("assets %s" % _usd(c["reit_total_assets_usd"]))
+            print("    %-6s %-28s %s" % (
+                c["ticker"], c["name"][:28], " | ".join(bits)))
+        if len(g["members"]) > 8:
+            print("    ... and %d more" % (len(g["members"]) - 8))
+        print()
+
+
 def main():
     ap = argparse.ArgumentParser(description="S&P 500 Corporate Stack builder")
     ap.add_argument("--size", choices=list(SIZE_BANDS),
@@ -374,6 +479,13 @@ def main():
                     help="print the honest coverage report and exit")
     ap.add_argument("--relativity", action="store_true",
                     help="print the three-tier relativity report and exit")
+    ap.add_argument("--tier3", action="store_true",
+                    help="quantified tier-3 breakdown: live-first federal "
+                         "awards (USAspending) and REIT assets (SEC EDGAR), "
+                         "cached fallback labeled with date")
+    ap.add_argument("--refresh", action="store_true",
+                    help="with --tier3: force a fresh live pull and rewrite "
+                         "the cache files")
     ap.add_argument("--emit-demo-data", action="store_true",
                     help="write demo/stack_data.js for all bands x industries")
     ap.add_argument("--out", default=os.path.join(HERE, "demo", "stack_data.js"))
@@ -409,6 +521,21 @@ def main():
             print()
         return
 
+    if args.tier3:
+        import live_data
+        try:
+            tier3_data, provenance = live_data.get_tier3_data(
+                mappings, refresh=args.refresh)
+        except RuntimeError as e:
+            print("tier3 unavailable: %s" % e)
+            return
+        rep = tier3_report(mappings, tier3_data, provenance)
+        if args.format == "json":
+            print(json.dumps(rep, indent=2))
+            return
+        print_tier3_text(rep)
+        return
+
     if args.emit_demo_data:
         data = {}
         for band in SIZE_BANDS:
@@ -422,6 +549,18 @@ def main():
             "relativity": relativity_report(mappings, perk_categories),
             "perk_categories": perk_categories,
         }
+        # Tier-3 quantified breakdown for the demo page. Offline-friendly:
+        # uses the cache (labeled with its pull date), never the network.
+        try:
+            import live_data
+            adoc = live_data.load_awards_cache()
+            rdoc = live_data.load_reit_cache()
+            if adoc and rdoc:
+                prov = "cached:" + adoc.get("pulled_at", "unknown")
+                data["_meta"]["tier3"] = tier3_report(
+                    mappings, {"awards": adoc, "reits": rdoc}, prov)
+        except Exception:
+            pass
         os.makedirs(os.path.dirname(args.out), exist_ok=True)
         with open(args.out, "w") as f:
             f.write("window.SP500_STACK_DATA = ")

@@ -1,0 +1,2435 @@
+{
+  "source": "api.usaspending.gov /api/v2/search/spending_by_category/recipient/",
+  "label": "Federal obligated award dollars (contracts, grants, loans, direct payments and other financial assistance) matched by recipient name. Federal only; excludes state and local spending.",
+  "fiscal_years": [
+    2023,
+    2024,
+    2025
+  ],
+  "pulled_at": "2026-10-14T02:27:37.652634+00:00",
+  "companies": {
+    "ABT": {
+      "name": "Abbott Laboratories",
+      "by_year": {
+        "2023": 102319875.47,
+        "2024": 92844120.89,
+        "2025": 128373858.24
+      },
+      "matched_names": [
+        "ABBOTT LABORATORIES",
+        "ABBOTT LABORATORIES INC.",
+        "ABBOTT LABORATORIES, SA"
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "ABBV": {
+      "name": "AbbVie",
+      "by_year": {
+        "2023": 57991.0,
+        "2024": 49402.0,
+        "2025": 302385.09
+      },
+      "matched_names": [
+        "ABBVIE US LLC"
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "AMD": {
+      "name": "Advanced Micro Devices",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 1398130.0,
+        "2025": 0.0
+      },
+      "matched_names": [
+        "ADVANCED MICRO DEVICES, INC."
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "A": {
+      "name": "Agilent Technologies",
+      "by_year": {
+        "2023": 46347045.99,
+        "2024": 42202297.9,
+        "2025": 42896175.51
+      },
+      "matched_names": [
+        "AGILENT TECHNOLOGIES DEUTSCHLAND GMBH",
+        "AGILENT TECHNOLOGIES INC",
+        "AGILENT TECHNOLOGIES JAPAN, LTD.",
+        "AGILENT TECHNOLOGIES MEXICO",
+        "AGILENT TECHNOLOGIES, INC."
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "ALB": {
+      "name": "Albemarle",
+      "by_year": {
+        "2023": 46200.0,
+        "2024": 28200.0,
+        "2025": 66500.0
+      },
+      "matched_names": [
+        "ALBEMARLE LANDSCAPES, INC.",
+        "ALBEMARLE SEPTIC SERVICE LLC",
+        "ALBEMARLE SUITES LLC",
+        "ALBEMARLE U.S., INC."
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "ALGN": {
+      "name": "Align Technology",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "MO": {
+      "name": "Altria",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "AMCR": {
+      "name": "Amcor",
+      "by_year": {
+        "2023": 9144.82,
+        "2024": 132245593.55,
+        "2025": 245054.85
+      },
+      "matched_names": [
+        "AAMCOR HOLDINGS, INC.",
+        "AAMCORE, INC.",
+        "AMCOR JV ONE LLC",
+        "CAMCOR INC",
+        "KAZAKHSTAN AMCORNERS NETWORK, OO"
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "AME": {
+      "name": "Ametek",
+      "by_year": {
+        "2023": null,
+        "2024": 24551254.47,
+        "2025": 10279465.75
+      },
+      "matched_names": [
+        "AMETEK AEGIS INC.",
+        "AMETEK AIRCRAFT PARTS & ACCESSORIES INC",
+        "AMETEK AIRTECHNOLOGY GROUP LIMITED",
+        "AMETEK AMERON, LLC",
+        "AMETEK ARIZONA INSTRUMENT LLC",
+        "AMETEK CTS US, INC.",
+        "AMETEK INC",
+        "AMETEK PROGRAMMABLE POWER, INC.",
+        "AMETEK SCP INC",
+        "AMETEK THERMAL SYSTEMS INC",
+        "AMETEK, INC."
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "AMGN": {
+      "name": "Amgen",
+      "by_year": {
+        "2023": 212265308.6,
+        "2024": 129979388.38,
+        "2025": 92145716.31
+      },
+      "matched_names": [
+        "AMGEN INC.",
+        "AMGEN USA INC"
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "APH": {
+      "name": "Amphenol",
+      "by_year": {
+        "2023": null,
+        "2024": 736992.2,
+        "2025": 2166262.05
+      },
+      "matched_names": [
+        "AMPHENOL (MARYLAND) INC",
+        "AMPHENOL BORISCH TECHNOLOGIES, INC",
+        "AMPHENOL CABLE AND INTERCONNECT TECHNOLOGIES, INC",
+        "AMPHENOL CABLE AND INTERCONNECT TECHNOLOGIES, INC.",
+        "AMPHENOL CORP",
+        "AMPHENOL CORPORATION",
+        "AMPHENOL INTERCON SYSTEMS INC",
+        "AMPHENOL PCD INC",
+        "AMPHENOL THERMOMETRICS, INC."
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "ADI": {
+      "name": "Analog Devices",
+      "by_year": {
+        "2023": 344124.0,
+        "2024": 155348.0,
+        "2025": 4376.0
+      },
+      "matched_names": [
+        "ANALOG DEVICES FEDERAL LLC"
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "APA": {
+      "name": "APA Corporation",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "APO": {
+      "name": "Apollo Global Management",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "AMAT": {
+      "name": "Applied Materials",
+      "by_year": {
+        "2023": 879906.0,
+        "2024": 66618.41,
+        "2025": 2450.0
+      },
+      "matched_names": [
+        "APPLIED MATERIALS TECHNOLOGIES INC.",
+        "APPLIED MATERIALS, INC"
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "APTV": {
+      "name": "Aptiv",
+      "by_year": {
+        "2023": 207091932.68,
+        "2024": 223861901.96,
+        "2025": 96552106.69
+      },
+      "matched_names": [
+        "ADAPTIVE BIOTECHNOLOGIES CORPORATION",
+        "ADAPTIVE DIGITAL SYSTEMS INC",
+        "ADAPTIVE DRIVING ALLIANCE, LLC",
+        "ADAPTIVE DRIVING SOLUTIONS, INC.",
+        "ADAPTIVE DYNAMICS, INC.",
+        "ADAPTIVE INSIGHTS LLC , A WORKDAY COMPANY",
+        "ADAPTIVE INTEGRATION, INC.",
+        "ADAPTIVE MANAGEMENT AND ENGINEERING, LLC",
+        "ADAPTIVE MANUFACTURING SOLUTIONS LLC",
+        "ADAPTIVE MICRO SYSTEMS, LLC",
+        "ADAPTIVE MOBILITY EQUIPMENT INC",
+        "ADAPTIVE PROSTHETICS AND ORTHOTICS, LLC",
+        "ADAPTIVE RECOGNITION AMERICA CORPORATION",
+        "ADAPTIVE TECH RESOURCES",
+        "ADAPTIVE TECHNOLOGIES, LLC",
+        "ADAPTIVE TECHNOLOGY PROVIDERS INC",
+        "ADAPTIVE TECHNOLOGY RESOURCES, INC.",
+        "ADAPTIVE TESTING TECHNOLOGIES INC",
+        "ADAPTIVE TRAINING ACADEMY LLC",
+        "ADAPTIVE TRAINING OPTIONS LLC",
+        "ADAPTIVE VANS, INC.",
+        "ADAPTIVE WILDLIFE MANAGEMENT, L.L.C.",
+        "ADAPTIVEVETS SOLUTIONS, INC",
+        "APTIV SERVICES 3 (US), LLC",
+        "APTIVE HTG LLC",
+        "APTIVE RESOURCES LLC",
+        "CAPTIVATION SOFTWARE, LLC",
+        "CAPTIVE-AIRE SYSTEMS, INC.",
+        "CYDAPTIV SOLUTIONS INC",
+        "EDAPTIVE COMPUTING INC",
+        "EDAPTIVE SYSTEMS, LLC",
+        "INSTITUTE FOR ADAPTIVE MASTERY, LLC",
+        "KAPTIVATE LLC",
+        "KAPTIVATIVE HR SOLUTIONS, LLC",
+        "L3 ADAPTIVE METHODS, INC.",
+        "TEAM ADAPTIVE, INC",
+        "UNIVERSAL ADAPTIVE CONSULTING SERVICES INC.",
+        "VIDAPTIVE TECHNOLOGIES, LLC"
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "ADM": {
+      "name": "Archer Daniels Midland",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "ARES": {
+      "name": "Ares Management",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "ADSK": {
+      "name": "Autodesk",
+      "by_year": {
+        "2023": 10265.04,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [
+        "AUTODESK, INC."
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "AXON": {
+      "name": "Axon Enterprise",
+      "by_year": {
+        "2023": 101006410.61,
+        "2024": 107524285.45,
+        "2025": 72649160.86
+      },
+      "matched_names": [
+        "AXON ENTERPRISE, INC."
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "BKR": {
+      "name": "Baker Hughes",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 25530.73
+      },
+      "matched_names": [
+        "BAKER HUGHES JAPAN CO., LTD."
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "BALL": {
+      "name": "Ball Corporation",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "BAX": {
+      "name": "Baxter International",
+      "by_year": {
+        "2023": 23770639.25,
+        "2024": 2303455.1,
+        "2025": 0.0
+      },
+      "matched_names": [
+        "BAXTER HEALTHCARE CORPORATION"
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "BDX": {
+      "name": "Becton Dickinson",
+      "by_year": {
+        "2023": 135983.23,
+        "2024": 89393.69,
+        "2025": 0.0
+      },
+      "matched_names": [
+        "BECTON DICKINSON DEL URUGUAY S.A. SUCURSAL DEL PERU",
+        "BECTON DICKINSON GESELLSCHAFT MIT BESCHR\u00c4NKTER HAFTUNG"
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "TECH": {
+      "name": "Bio-Techne",
+      "by_year": {
+        "2023": 136358.94,
+        "2024": 55051.13,
+        "2025": 146421.5
+      },
+      "matched_names": [
+        "BIO-TECHNE CORPORATION",
+        "BIO-TECHNE SALES CORPORATION"
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "BIIB": {
+      "name": "Biogen",
+      "by_year": {
+        "2023": 3380408.0,
+        "2024": 207671.94,
+        "2025": 3237742.6
+      },
+      "matched_names": [
+        "BIOGEN U.S. CORPORATION",
+        "BIOGENESIS BAGO S.A.",
+        "BIOGENEX LABORATORIES",
+        "CREATIVE BIOGENE INC",
+        "PLATELET BIOGENESIS, INC."
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "BX": {
+      "name": "Blackstone Inc.",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "BA": {
+      "name": "Boeing",
+      "by_year": {
+        "2023": 24313212922.77,
+        "2024": 25100000000.0,
+        "2025": 23804316462.74
+      },
+      "matched_names": [
+        "BELL BOEING JOINT PROJECT OFFICE",
+        "BOEING AEROSPACE OPERATIONS, INC.",
+        "BOEING COMSATCOM SERVICES, INC.",
+        "BOEING DISTRIBUTION SERVICES DEFENSE LLC",
+        "BOEING DISTRIBUTION SERVICES X, INC.",
+        "BOEING DISTRIBUTION SERVICES, INC.",
+        "BOEING DISTRIBUTION, INC.",
+        "BOEING SATELLITE SYSTEMS, INC.",
+        "BOEING SIKORSKY AIRCRAFT SUPPORT, LLC",
+        "BOEING US TRAINING AND FLIGHT SERVICES L.L.C.",
+        "THE BOEING COMPANY",
+        "THE BOEING COMPANY (0674)"
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "BSX": {
+      "name": "Boston Scientific",
+      "by_year": {
+        "2023": 30907950.17,
+        "2024": 23880793.34,
+        "2025": 29962909.43
+      },
+      "matched_names": [
+        "BOSTON SCIENTIFIC CORP",
+        "BOSTON SCIENTIFIC DEL CARIBE, INC",
+        "BOSTON SCIENTIFIC NEUROMODULATION CORP"
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "BMY": {
+      "name": "Bristol Myers Squibb",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "AVGO": {
+      "name": "Broadcom",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "BF.B": {
+      "name": "Brown-Forman",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "BG": {
+      "name": "Bunge Global",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "CDNS": {
+      "name": "Cadence Design Systems",
+      "by_year": {
+        "2023": 6474662.0,
+        "2024": 4578857.0,
+        "2025": 2588689.0
+      },
+      "matched_names": [
+        "CADENCE DESIGN SYSTEMS INC"
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "CPT": {
+      "name": "Camden Property Trust",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "CVNA": {
+      "name": "Carvana",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "CASY": {
+      "name": "Casey's",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "CBOE": {
+      "name": "Cboe Global Markets",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "CF": {
+      "name": "CF Industries",
+      "by_year": {
+        "2023": 3644705.04,
+        "2024": 2990506.36,
+        "2025": -9272789.52
+      },
+      "matched_names": [
+        "CF INDUSTRIES NITROGEN LLC"
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "CRL": {
+      "name": "Charles River Laboratories",
+      "by_year": {
+        "2023": 45508556.24,
+        "2024": 64822353.56,
+        "2025": 70288003.41
+      },
+      "matched_names": [
+        "CHARLES RIVER LABORATORIES, INC."
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "CIEN": {
+      "name": "Ciena",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 93940.16,
+        "2025": 0.0
+      },
+      "matched_names": [
+        "CIENA GOVERNMENT SOLUTIONS INC"
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "CME": {
+      "name": "CME Group",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "COHR": {
+      "name": "Coherent Corp.",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "CL": {
+      "name": "Colgate-Palmolive",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "COP": {
+      "name": "ConocoPhillips",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "STZ": {
+      "name": "Constellation Brands",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "COO": {
+      "name": "Cooper Companies (The)",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "CPRT": {
+      "name": "Copart",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "GLW": {
+      "name": "Corning Inc.",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "CRH": {
+      "name": "CRH plc",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "DHR": {
+      "name": "Danaher Corporation",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "DVA": {
+      "name": "DaVita",
+      "by_year": {
+        "2023": 251153886.04,
+        "2024": 569179.81,
+        "2025": 533649880.45
+      },
+      "matched_names": [
+        "DAVITA INC.",
+        "TAMARI DAVITADZE IP"
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "DVN": {
+      "name": "Devon Energy",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "DXCM": {
+      "name": "Dexcom",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "FANG": {
+      "name": "Diamondback Energy",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "DG": {
+      "name": "Dollar General",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "DLTR": {
+      "name": "Dollar Tree",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "DOV": {
+      "name": "Dover Corporation",
+      "by_year": {
+        "2023": 5788353.1,
+        "2024": 447740.03,
+        "2025": 22832.0
+      },
+      "matched_names": [
+        "ANDOVER CORPORATION",
+        "DOVER PUMPS & PROCESS SOLUTIONS SEGMENT INC"
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "DOW": {
+      "name": "Dow Inc.",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 25815.22,
+        "2025": 0.0
+      },
+      "matched_names": [
+        "DOW EUROPE GMBH"
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "DHI": {
+      "name": "D. R. Horton",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "DD": {
+      "name": "DuPont",
+      "by_year": {
+        "2023": 6674246.01,
+        "2024": 4301860.88,
+        "2025": 6324335.02
+      },
+      "matched_names": [
+        "BSREP II DUPONT CIRCLE TRS LLC",
+        "DOYLE DUPONT LLC",
+        "DUPONT BUILDING, INC.",
+        "DUPONT ERH PROPCO LLC",
+        "DUPONT HOTEL PROJECT OWNER, LLC",
+        "DUPONT SPECIALTY PRODUCTS USA LLC",
+        "DUPONT SPECIALTY PRODUCTS USA, LLC"
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "EBAY": {
+      "name": "eBay",
+      "by_year": {
+        "2023": 400548.28,
+        "2024": -2991.28,
+        "2025": 37680.35
+      },
+      "matched_names": [
+        "BLUEBAY OFFICE INC",
+        "IKWEBAY LLC",
+        "KAREBAY BIOCHEM INC"
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "EW": {
+      "name": "Edwards Lifesciences",
+      "by_year": {
+        "2023": 23179945.16,
+        "2024": 27266998.93,
+        "2025": 27891454.8
+      },
+      "matched_names": [
+        "EDWARDS LIFESCIENCES LLC"
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "EMR": {
+      "name": "Emerson Electric",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "EOG": {
+      "name": "EOG Resources",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "EQT": {
+      "name": "EQT Corporation",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "ESS": {
+      "name": "Essex Property Trust",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "EG": {
+      "name": "Everest Group",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "EXE": {
+      "name": "Expand Energy",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "EXPE": {
+      "name": "Expedia Group",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "FICO": {
+      "name": "Fair Isaac",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "FSLR": {
+      "name": "First Solar",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "FLEX": {
+      "name": "Flex Ltd.",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "FCX": {
+      "name": "Freeport-McMoRan",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "GE": {
+      "name": "GE Aerospace",
+      "by_year": {
+        "2023": 11642941.1,
+        "2024": 45833975.48,
+        "2025": 27832448.26
+      },
+      "matched_names": [
+        "BAINBRIDGE AEROSPACE, L.L.C.",
+        "LAMINAREDGE AEROSPACE LLC",
+        "MARSHALL OF CAMBRIDGE AEROSPACE LIMITED",
+        "PRESTIGE AEROSPACE LLC"
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "GEHC": {
+      "name": "GE HealthCare",
+      "by_year": {
+        "2023": 46514799.82,
+        "2024": 43997732.79,
+        "2025": 33466410.44
+      },
+      "matched_names": [
+        "CHANGE HEALTHCARE HOLDINGS, INC.",
+        "CHANGE HEALTHCARE OPERATIONS, LLC",
+        "CHANGE HEALTHCARE TECHNOLOGIES LLC",
+        "CHANGE HEALTHCARE TECHNOLOGIES, LLC",
+        "GE HEALTHCARE CARIBBEAN EXPORT LLC",
+        "GE HEALTHCARE IITS USA CORP.",
+        "GE HEALTHCARE INC",
+        "GE HEALTHCARE JAPAN CORPORATION",
+        "MERGE HEALTHCARE SOLUTIONS INC",
+        "ROCKLEDGE HEALTHCARE & REHABILITATION CENTER LLC",
+        "SUNBRIDGE HEALTHCARE, LLC",
+        "VANTAGE HEALTHCARE LINEN SERVICES LLP"
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "GEV": {
+      "name": "GE Vernova",
+      "by_year": {
+        "2023": 363575.51,
+        "2024": 3436501.65,
+        "2025": 3849842.37
+      },
+      "matched_names": [
+        "GE VERNOVA ELECTRIFICATION SOFTWARE, LLC",
+        "GE VERNOVA INTERNATIONAL LLC",
+        "GE VERNOVA INTERNATIONAL, LLC",
+        "GE VERNOVA INTERNATIONAL, LLC.",
+        "GE VERNOVA OPERATIONS LLC"
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "GD": {
+      "name": "General Dynamics",
+      "by_year": {
+        "2023": 12311451247.22,
+        "2024": 12182126393.82,
+        "2025": 10882970830.45
+      },
+      "matched_names": [
+        "GENERAL DYNAMICS - OTS, INC.",
+        "GENERAL DYNAMICS DECISION SYSTEMS",
+        "GENERAL DYNAMICS EUROPEAN LAND SYSTEMS-BRIDGE SYSTEMS GMBH",
+        "GENERAL DYNAMICS GLOBAL FORCE, LLC",
+        "GENERAL DYNAMICS INFORMATION TECHNOLOGY INC.",
+        "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC.",
+        "GENERAL DYNAMICS LAND SYSTEMS - CANADA CORPORATION",
+        "GENERAL DYNAMICS LAND SYSTEMS CUSTOMER SERVICE & SUPPORT COMPANY",
+        "GENERAL DYNAMICS LAND SYSTEMS INC.",
+        "GENERAL DYNAMICS MISSION SYSTEMS, INC.",
+        "GENERAL DYNAMICS MOTION CONTROL LLC",
+        "GENERAL DYNAMICS ONE SOURCE LLC",
+        "GENERAL DYNAMICS ORDNANCE & TACTICAL SYSTEMS, INC.",
+        "GENERAL DYNAMICS ORDNANCE AND TACTICAL SYSTEMS - SIMUNITION OPERATIONS, INC.",
+        "GENERAL DYNAMICS ORDNANCE AND TACTICAL SYSTEMS INC",
+        "GENERAL DYNAMICS ORDNANCE AND TACTICAL SYSTEMS, INC.",
+        "GENERAL DYNAMICS OTS (AEROSPACE), INC.",
+        "GENERAL DYNAMICS OTS (WILKES BARRE), LLC",
+        "GENERAL DYNAMICS-OTS, INC."
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "GILD": {
+      "name": "Gilead Sciences",
+      "by_year": {
+        "2023": -865012.0,
+        "2024": 379216.78,
+        "2025": -9521908.81
+      },
+      "matched_names": [
+        "GILEAD SCIENCES INC"
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "HAL": {
+      "name": "Halliburton",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "HCA": {
+      "name": "HCA Healthcare",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "HONA": {
+      "name": "Honeywell Aerospace",
+      "by_year": {
+        "2023": 809813.49,
+        "2024": 545684.01,
+        "2025": 1200642.7
+      },
+      "matched_names": [
+        "HONEYWELL AEROSPACE INTERNATIONAL INC.",
+        "HONEYWELL AEROSPACE YEOVIL"
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "HST": {
+      "name": "Host Hotels & Resorts",
+      "by_year": {
+        "2023": 387182.21,
+        "2024": -34695.18,
+        "2025": 103270.4
+      },
+      "matched_names": [
+        "HOST HOTELS & RESORTS INC",
+        "HOST HOTELS & RESORTS LP",
+        "HOST HOTELS & RESORTS, L.P",
+        "HOST HOTELS & RESORTS, L.P."
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "HWM": {
+      "name": "Howmet Aerospace",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "HUBB": {
+      "name": "Hubbell Incorporated",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 88304.0,
+        "2025": 0.0
+      },
+      "matched_names": [
+        "HUBBELL INDUSTRIAL CONTROLS, INC"
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "HII": {
+      "name": "Huntington Ingalls Industries",
+      "by_year": {
+        "2023": 8822421344.12,
+        "2024": 4347684221.07,
+        "2025": 8565929513.48
+      },
+      "matched_names": [
+        "HUNTINGTON INGALLS INC",
+        "HUNTINGTON INGALLS INCORPORATED",
+        "HUNTINGTON INGALLS INDUSTRIES, INC"
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "IEX": {
+      "name": "IDEX Corporation",
+      "by_year": {
+        "2023": 196312.0,
+        "2024": 195773.5,
+        "2025": 285518.0
+      },
+      "matched_names": [
+        "BAND-IT-IDEX, INC.",
+        "IDEX HEALTH & SCIENCE LLC",
+        "IDEX MPT INC.",
+        "UNIDEX CORPORATION OF WESTERN N.Y.",
+        "XIDEX CORPORATION"
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "IDXX": {
+      "name": "Idexx Laboratories",
+      "by_year": {
+        "2023": 372270.89,
+        "2024": 564837.45,
+        "2025": 308995.66
+      },
+      "matched_names": [
+        "IDEXX LABORATORIES INC"
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "ILMN": {
+      "name": "Illumina Inc.",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "INCY": {
+      "name": "Incyte",
+      "by_year": {
+        "2023": 1060925.35,
+        "2024": 481473.57,
+        "2025": 585330.49
+      },
+      "matched_names": [
+        "INCYTE CORPORATION",
+        "INCYTE PATHOLOGY, P.S,"
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "PODD": {
+      "name": "Insulet Corporation",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "INTC": {
+      "name": "Intel",
+      "by_year": {
+        "2023": 481627051.59,
+        "2024": 455409859.19,
+        "2025": null
+      },
+      "matched_names": [
+        "ACTIONABLE INTELLIGENCE TECHNOLOGIES, INC.",
+        "AIR SPACE INTELLIGENCE, INC",
+        "APPLIED INTELLECT - TRIHYDRO 8A JV II LLC",
+        "APPLIED INTELLECT - TRIHYDRO 8A JV LLC",
+        "APPLIED INTELLECT LLC",
+        "APPLIED SIGNALS INTELLIGENCE, INC.",
+        "BULLETIN INTELLIGENCE LLC",
+        "CHUGACH INTELLIGENCE SOLUTIONS, LLC",
+        "CLARUS FLUID INTELLIGENCE, LLC",
+        "CUBIC DIGITAL INTELLIGENCE INC",
+        "DARKSTAR INTELLIGENCE, LLC",
+        "DATA INTELLIGENCE LLC",
+        "EMOTIONAL INTELLIGENCE INSTITUTE, INC.",
+        "FIVE STONES INTELLIGENCE, INC.",
+        "HEXAGON MANUFACTURING INTELLIGENCE, LLC",
+        "INTEL FEDERAL LLC",
+        "INTELERAD MEDICAL SYSTEMS INC",
+        "INTELIPATH SERVICES GROUP INC",
+        "INTELITRAC INC",
+        "INTELLECT SOLUTIONS, LLC",
+        "INTELLECTECHS INC",
+        "INTELLECTUS, LLC",
+        "INTELLI-HEART SERVICES, INC",
+        "INTELLIBRIDGE, LLC",
+        "INTELLIDYNE, L.L.C.",
+        "INTELLIEPI IR, INC",
+        "INTELLIGENESIS LLC",
+        "INTELLIGENT FUSION TECHNOLOGY, INC.",
+        "INTELLIGENT HEALTH SOLUTIONS, LLC",
+        "INTELLIGENT IMAGING INNOVATIONS, INC",
+        "INTELLIGENT OPTICAL SYSTEMS, INC.",
+        "INTELLIGENT PAYLOAD SOLUTIONS, INC.",
+        "INTELLIGENT TECHNOLOGY, LLC",
+        "INTELLIGENT WAVES LLC",
+        "INTELLIMAR INC",
+        "INTELLIPOINT CONSULTING, INC.",
+        "INTELLIPOWER, INC.",
+        "INTELLISENSE SYSTEMS INC",
+        "INTELLIWARE SYSTEMS INC",
+        "INTELSAT GENERAL COMMUNICATIONS LLC",
+        "LEXICAL INTELLIGENCE, LLC",
+        "MATRIX INTERNATIONAL SECURITY TRAINING INTELLIGENCE CENTER, INC.",
+        "MTNT INTELLIGENCE SOLUTIONS, LLC",
+        "NEXT INTELLIGENCE SOLUTIONS, LLC",
+        "NIGHTWING INTELLIGENCE SOLUTIONS, LLC",
+        "OPEN INTELLIGENCE, LLC",
+        "PRIUS INTELLI, LLC",
+        "QINTEL LLC",
+        "QUALCOMM INTELLIGENT SOLUTIONS INC",
+        "QYLUR INTELLIGENT SYSTEMS INC",
+        "S&P GLOBAL MARKET INTELLIGENCE LLC",
+        "SILOTECH-INTELLEKT JV LLC",
+        "SINTEL SATELLITE SERVICES INC",
+        "SINTELA INC",
+        "SPACE COAST INTELLIGENT SOLUTIONS INC",
+        "SYSTEMS INTELLIGENCE, LLC",
+        "THE ECONOMIST INTELLIGENCE UNIT, NA, INCORPORATED",
+        "THE INTELLEKT GROUP, LLC",
+        "THE INTELLIGENCE AND SECURITY ASSOCIATES, LLC"
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "IBKR": {
+      "name": "Interactive Brokers",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "ICE": {
+      "name": "Intercontinental Exchange",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "IFF": {
+      "name": "International Flavors & Fragrances",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "IP": {
+      "name": "International Paper",
+      "by_year": {
+        "2023": 213937.0,
+        "2024": 158600.0,
+        "2025": 0.0
+      },
+      "matched_names": [
+        "INTERNATIONAL PAPER COMPANY"
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "ISRG": {
+      "name": "Intuitive Surgical",
+      "by_year": {
+        "2023": 58553631.92,
+        "2024": 92464357.21,
+        "2025": 21941863.87
+      },
+      "matched_names": [
+        "INTUITIVE SURGICAL INC"
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "INVH": {
+      "name": "Invitation Homes",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "JBL": {
+      "name": "Jabil",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "JNJ": {
+      "name": "Johnson & Johnson",
+      "by_year": {
+        "2023": 56432558.22,
+        "2024": 56688435.9,
+        "2025": 56597667.63
+      },
+      "matched_names": [
+        "JOHNSON & JOHNSON CONSTRUCTION COMPANY CORP",
+        "JOHNSON & JOHNSON HEALTH CARE SYSTEMS INC.",
+        "JOHNSON & JOHNSON INTERNATIONAL",
+        "JOHNSON & JOHNSON LOCKSMITH AND DOOR COMPANY, INC",
+        "JOHNSON & JOHNSON MEDICAL KOREA CO. LTD.",
+        "JOHNSON & JOHNSON VISION CARE INC"
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "KEYS": {
+      "name": "Keysight Technologies",
+      "by_year": {
+        "2023": 43212642.21,
+        "2024": 24344299.3,
+        "2025": 15716146.77
+      },
+      "matched_names": [
+        "KEYSIGHT TECHNOLOGIES INC",
+        "KEYSIGHT TECHNOLOGIES, INC."
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "KMI": {
+      "name": "Kinder Morgan",
+      "by_year": {
+        "2023": 48682267.81,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [
+        "KINDER MORGAN TANK STORAGE TERMINALS LLC"
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "KKR": {
+      "name": "KKR & Co.",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "KLAC": {
+      "name": "KLA Corporation",
+      "by_year": {
+        "2023": 4156384.24,
+        "2024": 230854.91,
+        "2025": 430851.52
+      },
+      "matched_names": [
+        "KLA CORPORATION"
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "KR": {
+      "name": "Kroger",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "LHX": {
+      "name": "L3Harris",
+      "by_year": {
+        "2023": 5568385879.03,
+        "2024": null,
+        "2025": 4978957641.13
+      },
+      "matched_names": [
+        "L3HARRIS FORCEX, INC.",
+        "L3HARRIS FUZING AND ORDNANCE SYSTEMS, INC.",
+        "L3HARRIS GLOBAL COMMUNICATIONS, INC.",
+        "L3HARRIS INTERSTATE ELECTRONICS CORPORATION",
+        "L3HARRIS LINCHPIN LABS, INC.",
+        "L3HARRIS MARITIME POWER & ENERGY SOLUTIONS, INC",
+        "L3HARRIS MARITIME SERVICES INC",
+        "L3HARRIS NEXGEN COMMUNICATIONS LLC",
+        "L3HARRIS TECHNOLOGIES INTEGRATED SYSTEMS L.P.",
+        "L3HARRIS TECHNOLOGIES, INC",
+        "L3HARRIS TECHNOLOGIES, INC."
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "LRCX": {
+      "name": "Lam Research",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "LEN": {
+      "name": "Lennar",
+      "by_year": {
+        "2023": 70638.42,
+        "2024": 239135.8,
+        "2025": 322200.0
+      },
+      "matched_names": [
+        "DANIEL LENNART JORGEN ERIKSSON",
+        "KURT LENNARTSSON CONSULTING LLC",
+        "LENNARD HOPPER, DDS, PC"
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "LLY": {
+      "name": "Lilly (Eli)",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "LMT": {
+      "name": "Lockheed Martin",
+      "by_year": {
+        "2023": 65508836763.68,
+        "2024": null,
+        "2025": 71043556330.99
+      },
+      "matched_names": [
+        "LOCKHEED MARTIN ACULIGHT CORPORATION",
+        "LOCKHEED MARTIN AEROPARTS, INC.",
+        "LOCKHEED MARTIN COHERENT TECHNOLOGIES, INC.",
+        "LOCKHEED MARTIN CORP",
+        "LOCKHEED MARTIN CORPORATION",
+        "LOCKHEED MARTIN GLOBAL, INC",
+        "LOCKHEED MARTIN GLOBAL, INC.",
+        "LOCKHEED MARTIN INTEGRATED SYSTEMS, LLC",
+        "LOCKHEED MARTIN LOGISTIC SERVICES, INC.",
+        "LOCKHEED MARTIN OVERSEAS, LLC",
+        "LOCKHEED MARTIN SERVICES, LLC",
+        "LOCKHEED MARTIN SIPPICAN, INC.",
+        "RAYTHEON/LOCKHEED MARTIN JAVELIN JV"
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "L": {
+      "name": "Loews Corporation",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "LITE": {
+      "name": "Lumentum",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 30744.0,
+        "2025": 0.0
+      },
+      "matched_names": [
+        "LUMENTUM OPERATIONS LLC"
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "LYB": {
+      "name": "LyondellBasell",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "MLM": {
+      "name": "Martin Marietta",
+      "by_year": {
+        "2023": -274284.6,
+        "2024": 6675295.82,
+        "2025": 62157.32
+      },
+      "matched_names": [
+        "MARTIN MARIETTA MATERIALS, INC",
+        "MARTIN MARIETTA MATERIALS, INC.",
+        "MARTIN MARIETTA SPEC COMPONENT"
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "MRVL": {
+      "name": "Marvell Technology",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "MAS": {
+      "name": "Masco",
+      "by_year": {
+        "2023": 240788.75,
+        "2024": 2336984.94,
+        "2025": 1255255.57
+      },
+      "matched_names": [
+        "MASCO MAYERS LLC",
+        "MASCO SERVICE CORPORATION",
+        "MASCOT PECAN SHELLING CO INC",
+        "MASCOTT EQUIPMENT COMPANY, INC.",
+        "SUGARS MASCOTSCA INC",
+        "VIMASCO CORP"
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "MDT": {
+      "name": "Medtronic",
+      "by_year": {
+        "2023": 60688588.75,
+        "2024": 157587698.47,
+        "2025": 84447683.21
+      },
+      "matched_names": [
+        "MEDTRONIC CARE MANAGEMENT SERVICES, LLC",
+        "MEDTRONIC GESELLSCHAFT MIT BESCHR\u00c4NKTER HAFTUNG",
+        "MEDTRONIC INC",
+        "MEDTRONIC MINIMED, INC",
+        "MEDTRONIC SOFAMOR DANEK USA, INC",
+        "MEDTRONIC USA INC",
+        "MEDTRONIC USA, INC.",
+        "MEDTRONIC, INC."
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "MRK": {
+      "name": "Merck & Co.",
+      "by_year": {
+        "2023": 34535905.92,
+        "2024": 154766679.04,
+        "2025": 5210431.04
+      },
+      "matched_names": [
+        "MERCK SHARP & DOHME LLC"
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "MTD": {
+      "name": "Mettler Toledo",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "MCHP": {
+      "name": "Microchip Technology",
+      "by_year": {
+        "2023": 5307803.3,
+        "2024": 2559301.77,
+        "2025": 3740781.57
+      },
+      "matched_names": [
+        "MICROCHIP TECHNOLOGY INC"
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "MU": {
+      "name": "Micron Technology",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "MAA": {
+      "name": "Mid-America Apartment Communities",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "MRNA": {
+      "name": "Moderna",
+      "by_year": {
+        "2023": 48044093.89,
+        "2024": 8893.08,
+        "2025": 0.0
+      },
+      "matched_names": [
+        "MODERNA US, INC.",
+        "MODERNAG INC.",
+        "MODERNATX, INC."
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "MPWR": {
+      "name": "Monolithic Power Systems",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "MCO": {
+      "name": "Moody's Corporation",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 16797280.39,
+        "2025": 19569881.85
+      },
+      "matched_names": [
+        "MOODY'S ANALYTICS SOLUTIONS, LLC",
+        "MOODY'S ANALYTICS, INC."
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "MOS": {
+      "name": "Mosaic",
+      "by_year": {
+        "2023": 19370276.19,
+        "2024": 9102064.46,
+        "2025": 9724050.04
+      },
+      "matched_names": [
+        "CELLMOSAIC, INC.",
+        "MIOTTO MOSAIC ART STUDIOS INC.",
+        "MOSAIC ARCHITECTURE, PC",
+        "MOSAIC ATM, INC.",
+        "MOSAIC DATA SERVICES, INC",
+        "MOSAIC ECONOMIC CONSULTING LLC",
+        "MOSAIC INSTITUTE FOR HUMAN DEVELOPMENT LLC",
+        "MOSAIC MANUFACTURING LTD",
+        "MOSAIC MICROSYSTEMS LLC",
+        "MOSAIC RESOURCE GROUP LLC",
+        "MOSAIC TECHNOLOGIES GROUP LLC"
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "MSI": {
+      "name": "Motorola Solutions",
+      "by_year": {
+        "2023": 153625290.72,
+        "2024": 198166329.27,
+        "2025": 193758833.58
+      },
+      "matched_names": [
+        "MOTOROLA SOLUTIONS CONNECTIVITY, INC.",
+        "MOTOROLA SOLUTIONS INC",
+        "MOTOROLA SOLUTIONS, INC",
+        "MOTOROLA SOLUTIONS, INC."
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "MSCI": {
+      "name": "MSCI",
+      "by_year": {
+        "2023": 203643.5,
+        "2024": 142592.33,
+        "2025": 97470.31
+      },
+      "matched_names": [
+        "MSCI ESG RESEARCH LLC",
+        "MSCI INC"
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "NDAQ": {
+      "name": "Nasdaq Inc.",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "NEM": {
+      "name": "Newmont",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "NDSN": {
+      "name": "Nordson Corporation",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "NOC": {
+      "name": "Northrop Grumman",
+      "by_year": {
+        "2023": 15664890004.08,
+        "2024": 17400000000.0,
+        "2025": 12900000000.0
+      },
+      "matched_names": [
+        "NORTHROP GRUMMAN SYSTEMS CORP",
+        "NORTHROP GRUMMAN SYSTEMS CORPORATION"
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "NUE": {
+      "name": "Nucor",
+      "by_year": {
+        "2023": 654798.28,
+        "2024": 770422.04,
+        "2025": 686078.16
+      },
+      "matched_names": [
+        "NUCOR CORPORATION",
+        "NUCOREVISION INC"
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "NVR": {
+      "name": "NVR Inc.",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "NXPI": {
+      "name": "NXP Semiconductors",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "OXY": {
+      "name": "Occidental Petroleum",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "ON": {
+      "name": "ON Semiconductor",
+      "by_year": {
+        "2023": 111050.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [
+        "ADDISON SEMICONDUCTOR MATERIALS, INC.",
+        "MICRON SEMICONDUCTOR LIMITED"
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "OKE": {
+      "name": "Oneok",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "PKG": {
+      "name": "Packaging Corporation of America",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "PH": {
+      "name": "Parker Hannifin",
+      "by_year": {
+        "2023": 1297288.69,
+        "2024": 1587748.82,
+        "2025": 1304161.78
+      },
+      "matched_names": [
+        "PARKER HANNIFIN CORP",
+        "PARKER HANNIFIN CORPORATION"
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "PFE": {
+      "name": "Pfizer",
+      "by_year": {
+        "2023": 1897969505.5,
+        "2024": -24790163.17,
+        "2025": 1445548.92
+      },
+      "matched_names": [
+        "PFIZER INC"
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "PM": {
+      "name": "Philip Morris International",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "PTC": {
+      "name": "PTC Inc.",
+      "by_year": {
+        "2023": 39389511.89,
+        "2024": 41712256.84,
+        "2025": 32137402.83
+      },
+      "matched_names": [
+        "PTC INC."
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "PHM": {
+      "name": "PulteGroup",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "PWR": {
+      "name": "Quanta Services",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "QCOM": {
+      "name": "Qualcomm",
+      "by_year": {
+        "2023": 89475.3,
+        "2024": 6150127.0,
+        "2025": 31500.0
+      },
+      "matched_names": [
+        "QUALCOMM INTELLIGENT SOLUTIONS INC",
+        "QUALCOMM TECHNOLOGIES INC"
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "Q": {
+      "name": "Qnity Electronics",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "RJF": {
+      "name": "Raymond James Financial",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "RTX": {
+      "name": "RTX Corporation",
+      "by_year": {
+        "2023": 8228141602.85,
+        "2024": 5046922669.24,
+        "2025": 7285263024.8
+      },
+      "matched_names": [
+        "RTX CORPORATION"
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "REGN": {
+      "name": "Regeneron Pharmaceuticals",
+      "by_year": {
+        "2023": 326475498.0,
+        "2024": 0.0,
+        "2025": -331708160.1
+      },
+      "matched_names": [
+        "REGENERON PHARMACEUTICALS INC"
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "RMD": {
+      "name": "ResMed",
+      "by_year": {
+        "2023": -62092.5,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [
+        "RESMED INC."
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "RVTY": {
+      "name": "Revvity",
+      "by_year": {
+        "2023": 7629619.06,
+        "2024": 14016706.62,
+        "2025": 5371400.2
+      },
+      "matched_names": [
+        "REVVITY DISCOVERY LIMITED",
+        "REVVITY GENE DELIVERY GMBH",
+        "REVVITY HEALTH SCIENCES, INC.",
+        "REVVITY INC",
+        "REVVITY OMICS INC",
+        "REVVITY SIGNALS SOFTWARE, INC."
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "HOOD": {
+      "name": "Robinhood Markets",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "ROK": {
+      "name": "Rockwell Automation",
+      "by_year": {
+        "2023": 13253933.95,
+        "2024": 4281267.74,
+        "2025": 11872188.97
+      },
+      "matched_names": [
+        "ROCKWELL AUTOMATION INC",
+        "ROCKWELL AUTOMATION, INC."
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "SPGI": {
+      "name": "S&P Global",
+      "by_year": {
+        "2023": 17470553.14,
+        "2024": 18265333.7,
+        "2025": 23235908.57
+      },
+      "matched_names": [
+        "S&P GLOBAL INC.",
+        "S&P GLOBAL LIMITED",
+        "S&P GLOBAL MARKET INTELLIGENCE LLC"
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "SNDK": {
+      "name": "Sandisk",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "SLB": {
+      "name": "Schlumberger",
+      "by_year": {
+        "2023": 3153789.75,
+        "2024": 2229844.26,
+        "2025": 2863469.86
+      },
+      "matched_names": [
+        "SCHLUMBERGER TECHNOLOGY CORPORATION"
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "STX": {
+      "name": "Seagate Technology",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "SWKS": {
+      "name": "Skyworks Solutions",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "SW": {
+      "name": "Smurfit Westrock",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "SOLV": {
+      "name": "Solventum",
+      "by_year": {
+        "2023": 23501767.01,
+        "2024": 44662838.35,
+        "2025": 29617333.36
+      },
+      "matched_names": [
+        "SOLVENTUM HEALTH INFORMATION SYSTEMS, INC.",
+        "SOLVENTUM ORTHODONTICS CORPORATION",
+        "SOLVENTUM PURIFICATION INC.",
+        "SOLVENTUM US LLC"
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "STLD": {
+      "name": "Steel Dynamics",
+      "by_year": {
+        "2023": 13500.0,
+        "2024": 48500.0,
+        "2025": 13500.0
+      },
+      "matched_names": [
+        "WORLD STEEL DYNAMICS INC."
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "STE": {
+      "name": "Steris",
+      "by_year": {
+        "2023": 41066674.03,
+        "2024": 42129052.12,
+        "2025": 41291427.93
+      },
+      "matched_names": [
+        "ASTERISMAI LLC",
+        "STERIS CORPORATION",
+        "STERIS IBERIA S.A.",
+        "STERIS INSTRUMENT MANAGEMENT SERVICES, INC"
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "SYK": {
+      "name": "Stryker Corporation",
+      "by_year": {
+        "2023": 61616558.44,
+        "2024": 15218272.09,
+        "2025": 1705618.72
+      },
+      "matched_names": [
+        "STRYKER COMMUNICATIONS INC",
+        "STRYKER CORPORATION",
+        "STRYKER ITALIA S.R.L.",
+        "STRYKER SALES LLC",
+        "STRYKER SALES, LLC"
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "SNPS": {
+      "name": "Synopsys",
+      "by_year": {
+        "2023": 941174.0,
+        "2024": 1405664.0,
+        "2025": 983913.0
+      },
+      "matched_names": [
+        "SYNOPSYS, INC."
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "TTWO": {
+      "name": "Take-Two Interactive",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "TRGP": {
+      "name": "Targa Resources",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "TEL": {
+      "name": "TE Connectivity",
+      "by_year": {
+        "2023": 2799527.78,
+        "2024": 2294302.56,
+        "2025": 2525828.65
+      },
+      "matched_names": [
+        "TE CONNECTIVITY CORPORATION",
+        "TE CONNECTIVITY SEACON PHOENIX INC."
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "TDY": {
+      "name": "Teledyne Technologies",
+      "by_year": {
+        "2023": 266423602.24,
+        "2024": 369533048.06,
+        "2025": 278583716.08
+      },
+      "matched_names": [
+        "TELEDYNE BROWN ENGINEERING, INC.",
+        "TELEDYNE CONTROLS, LLC",
+        "TELEDYNE DEFENSE ELECTRONICS, LLC",
+        "TELEDYNE DETCON, INC.",
+        "TELEDYNE DIGITAL IMAGING INC",
+        "TELEDYNE DIGITAL IMAGING US, INC.",
+        "TELEDYNE ENERGY SYSTEMS, INC",
+        "TELEDYNE FLIR COMMERCIAL SYSTEMS, INC.",
+        "TELEDYNE FLIR DEFENSE, INC.",
+        "TELEDYNE FLIR DEFENSE, LLC",
+        "TELEDYNE FLIR EOC, LLC",
+        "TELEDYNE FLIR MARITIME US, INC.",
+        "TELEDYNE FLIR UNMANNED GROUND SYSTEMS, INC",
+        "TELEDYNE FLIR, LLC",
+        "TELEDYNE INSTRUMENTS INC",
+        "TELEDYNE INSTRUMENTS, INC.",
+        "TELEDYNE LECROY, INC.",
+        "TELEDYNE RESON INC",
+        "TELEDYNE RISI, INC.",
+        "TELEDYNE SCIENTIFIC & IMAGING LLC",
+        "TELEDYNE SCIENTIFIC & IMAGING, LLC",
+        "TELEDYNE TECHNOLOGIES INC",
+        "TELEDYNE TECHNOLOGIES INCORPORATED"
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "TER": {
+      "name": "Teradyne",
+      "by_year": {
+        "2023": 21862506.45,
+        "2024": 26146229.53,
+        "2025": 51078892.17
+      },
+      "matched_names": [
+        "TERADYNE INC",
+        "TERADYNE, INC",
+        "TERADYNE, INC."
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "TXN": {
+      "name": "Texas Instruments",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "TPL": {
+      "name": "Texas Pacific Land",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "TXT": {
+      "name": "Textron",
+      "by_year": {
+        "2023": 1756986701.53,
+        "2024": 2145774663.11,
+        "2025": 3271083767.71
+      },
+      "matched_names": [
+        "BELL HELICOPTER TEXTRON INC",
+        "BELL TEXTRON INC",
+        "BELL TEXTRON INC.",
+        "FLIGHTSAFETY TEXTRON AVIATION TRAINING LLC",
+        "TEXTRON AVIATION DEFENSE LLC",
+        "TEXTRON AVIATION INC",
+        "TEXTRON GROUND SUPPORT EQUIPMENT INC.",
+        "TEXTRON INC",
+        "TEXTRON SYSTEMS CORP",
+        "TEXTRON SYSTEMS CORPORATION",
+        "TEXTRON, INC"
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "TMO": {
+      "name": "Thermo Fisher Scientific",
+      "by_year": {
+        "2023": 605350.86,
+        "2024": 543307.14,
+        "2025": 1585252.15
+      },
+      "matched_names": [
+        "THERMO FISHER SCIENTIFIC (ASHEVILLE) LLC",
+        "THERMO FISHER SCIENTIFIC (THAILAND) CO., LTD.",
+        "THERMO FISHER SCIENTIFIC CHEMICALS, INC."
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "TDG": {
+      "name": "TransDigm Group",
+      "by_year": {
+        "2023": 6277924.64,
+        "2024": 6071248.7,
+        "2025": 5134181.78
+      },
+      "matched_names": [
+        "TRANSDIGM INC"
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "UDR": {
+      "name": "UDR Inc.",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "UHS": {
+      "name": "Universal Health Services",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "VRTX": {
+      "name": "Vertex Pharmaceuticals",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "VTRS": {
+      "name": "Viatris",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "VMRK": {
+      "name": "Vivmark Residential",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "VMC": {
+      "name": "Vulcan Materials",
+      "by_year": {
+        "2023": 12252.5,
+        "2024": 34273.0,
+        "2025": 0.0
+      },
+      "matched_names": [
+        "VULCAN MATERIALS COMPANY"
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "VYLR": {
+      "name": "Vylor",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "WAB": {
+      "name": "Wabtec",
+      "by_year": {
+        "2023": 4466290.52,
+        "2024": 4311236.79,
+        "2025": 4249311.23
+      },
+      "matched_names": [
+        "WABTEC COMPONENTS LLC",
+        "WABTEC INSPECTION TECHNOLOGIES, INC.",
+        "WABTEC TRANSPORTATION SYSTEMS, LLC"
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "WAT": {
+      "name": "Waters Corporation",
+      "by_year": {
+        "2023": 18804756.39,
+        "2024": 4809708.99,
+        "2025": -6643.7
+      },
+      "matched_names": [
+        "TA INSTRUMENTS - WATERS L.L.C.",
+        "WATERS CORPORATION",
+        "WATERS TECHNOLOGIES CORPORATION"
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "WST": {
+      "name": "West Pharmaceutical Services",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "WDC": {
+      "name": "Western Digital",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 7039161.0,
+        "2025": 7936781.0
+      },
+      "matched_names": [
+        "WESTERN DIGITAL TECHNOLOGIES, INC."
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "WY": {
+      "name": "Weyerhaeuser",
+      "by_year": {
+        "2023": 6294.0,
+        "2024": 19000.0,
+        "2025": 5047.0
+      },
+      "matched_names": [
+        "WEYERHAEUSER COMPANY",
+        "WEYERHAEUSER NR COMPANY",
+        "WEYERHAEUSER TIMBER HOLDINGS, INC"
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "WMB": {
+      "name": "Williams Companies",
+      "by_year": {
+        "2023": 0.0,
+        "2024": 0.0,
+        "2025": 0.0
+      },
+      "matched_names": [],
+      "match_method": "recipient-name token match"
+    },
+    "ZBH": {
+      "name": "Zimmer Biomet",
+      "by_year": {
+        "2023": 2495397.63,
+        "2024": 1793332.29,
+        "2025": 1397084.17
+      },
+      "matched_names": [
+        "ZIMMER BIOMET SPINE, INC."
+      ],
+      "match_method": "recipient-name token match"
+    },
+    "ZTS": {
+      "name": "Zoetis",
+      "by_year": {
+        "2023": 799412.9,
+        "2024": 767854.06,
+        "2025": 491490.76
+      },
+      "matched_names": [
+        "ZOETIS INC."
+      ],
+      "match_method": "recipient-name token match"
+    }
+  }
+}

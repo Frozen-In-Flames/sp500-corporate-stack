@@ -7,6 +7,22 @@ insurance, shipping, travel, legal, and the rest). Route that spend through
 index vendors and the operating budget becomes diversified revenue for S&P 500
 companies, which is the flywheel described in [flywheel.md](flywheel.md).
 
+## v0.4.0: tier 3, quantified
+
+Tier 3 was the named boundary: 190 companies with no routable corporate
+spend. v0.4.0 quantifies it through the channels that do touch it, live.
+`python3 stack_builder.py --tier3` pulls real current numbers at runtime:
+federal obligated award dollars per company per fiscal year from
+USAspending.gov (federal only, matched by recipient name), and total assets
+from the latest 10-K on SEC EDGAR for the 8 REITs (a labeled proxy for
+property portfolio scale, never appraised value). Cached JSON is fallback
+only, always labeled with its date; `--refresh` forces a fresh pull and
+rewrites the cache. Every one of the 190 carries a reason code
+(defense_gov, reit, pharma, semis, commodities, other), and the demo page
+shows the tier-3 breakdown by reason code with dollar figures. The 190 are
+not $0 of economic reality; they are $0 of routable corporate spend, and now
+the difference is measured.
+
 ## v0.3.0: the three tiers
 
 The relativity between the three coverage tiers is now explicit and complete.
@@ -88,7 +104,15 @@ industry to explore the recommended stack.
 - `data/categories.json`: 61 business capability categories.
 - `data/vendor_map.json`: per-company mapping with status
   (mapped/indirect/unmapped), specific products, notes, `consumer_channels`
-  for mapped vendors, and `perk_assignments` for indirect vendors.
+  for mapped vendors, `perk_assignments` for indirect vendors, and
+  `reason_code` for unmapped vendors (defense_gov, reit, pharma, semis,
+  commodities, other).
+- `data/gov_awards.json`: cached federal award totals per company per fiscal
+  year (USAspending.gov), fallback only, labeled with pull date.
+- `data/reit_values.json`: cached REIT total assets from latest 10-K
+  (SEC EDGAR), fallback only, labeled with pull date.
+- `live_data.py`: live-first tier-3 quantification (USAspending + SEC EDGAR
+  at runtime, cache fallback, `--refresh` rewrites cache).
 - `data/perk_categories.json`: the 12 Consumer & Perks shelf categories.
 - `stack_builder.py`: the recommendation engine and spend model.
 - `demo/`: static demo page plus generated data.
@@ -108,6 +132,13 @@ industry to explore the recommended stack.
   search for anchor and ambiguous companies (October 2026). Specific product
   names are recorded per mapping so anyone can check them.
 - Spend figures: order-of-magnitude planning estimates, not quotes.
+- Tier-3 federal awards: USAspending.gov
+  `/api/v2/search/spending_by_category/recipient/`, pulled live at runtime
+  by `stack_builder.py --tier3` (fiscal years 2023-2025), matched by
+  recipient name; federal obligations only, excludes state/local.
+- Tier-3 REIT scale: SEC EDGAR companyfacts, total assets from the latest
+  10-K, a labeled proxy for property portfolio scale, never appraised
+  property value.
 
 ## License
 
