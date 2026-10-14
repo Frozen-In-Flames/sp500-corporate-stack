@@ -10,6 +10,7 @@ Usage:
   python3 stack_builder.py --size smb --industry technology
   python3 stack_builder.py --size enterprise --industry retail --format json
   python3 stack_builder.py --coverage
+  python3 stack_builder.py --relativity [--size smb] [--industry technology]
   python3 stack_builder.py --emit-demo-data --out demo/stack_data.js
 """
 
@@ -134,7 +135,9 @@ def load_data():
         vendor_map = json.load(f)
     with open(os.path.join(DATA, "categories.json")) as f:
         categories = {c["id"]: c for c in json.load(f)["categories"]}
-    return vendor_map["mappings"], categories
+    with open(os.path.join(DATA, "perk_categories.json")) as f:
+        perk_categories = json.load(f)["categories"]
+    return vendor_map, categories, perk_categories
 
 
 def coverage_report(mappings):
@@ -235,6 +238,131 @@ def build_stack(mappings, categories, size_band, industry):
     }
 
 
+def build_perks(mappings, perk_categories, size_band):
+    """Employee-perks shelf (tier 2): route perk dollars to the 32 indirect
+    vendors across the perk categories, diversified by least-used vendor."""
+    if size_band not in SIZE_BANDS:
+        raise ValueError("size_band must be one of %s" % list(SIZE_BANDS))
+    employees = SIZE_BANDS[size_band]["employees"]
+    pool = defaultdict(list)
+    for m in mappings:
+        if m["status"] != "indirect":
+            continue
+        for a in m.get("perk_assignments", []):
+            pool[a["perk_category"]].append({
+                "ticker": m["ticker"], "vendor": m["name"],
+                "perk": a["perk"]})
+    usage = defaultdict(int)
+    shelf = []
+    for cat in perk_categories:
+        cands = sorted(pool.get(cat["id"], []),
+                       key=lambda c: (usage[c["ticker"]], c["ticker"]))
+        if not cands:
+            continue
+        pick = cands[0]
+        usage[pick["ticker"]] += 1
+        shelf.append({
+            "perk_category": cat["id"],
+            "perk_category_name": cat["name"],
+            "ticker": pick["ticker"],
+            "vendor": pick["vendor"],
+            "perk": pick["perk"],
+            "estimated_annual_spend_usd": round(
+                cat["spend_per_employee"] * employees),
+        })
+    total = sum(p["estimated_annual_spend_usd"] for p in shelf)
+    return {
+        "size_band": size_band,
+        "employees": employees,
+        "perks": shelf,
+        "perk_categories_covered": len(shelf),
+        "perks_vendors_used": len(usage),
+        "estimated_perks_annual_spend_usd": total,
+    }
+
+
+TIER_MEANING = {
+    "tier1": {
+        "name": "Tier 1: direct enterprise procurement",
+        "meaning": ("The company buys from these vendors as a business. "
+                    "Every dollar is corporate operating budget routed "
+                    "directly to index companies."),
+    },
+    "tier2": {
+        "name": "Tier 2: employee-directed consumer spend",
+        "meaning": ("The company cannot buy from these vendors as a business, "
+                    "but it can route employee perk dollars to them. Smaller "
+                    "per dollar than tier 1, and it reaches consumer-only "
+                    "index companies the enterprise stack cannot touch."),
+    },
+    "tier3": {
+        "name": "Tier 3: no routable spend",
+        "meaning": ("Commodity producers, REITs with no enterprise offering, "
+                    "and defense contractors selling only to governments. No "
+                    "honest channel exists to route company spend to them. "
+                    "This is the boundary of the model, and naming it is "
+                    "what keeps the other two tiers credible."),
+    },
+}
+
+
+def relativity_report(mappings, perk_categories, size_band="smb",
+                      industry="technology"):
+    """The three-tier relativity report: what spend each tier can honestly
+    route into the index, with representative examples."""
+    counts = defaultdict(int)
+    for m in mappings:
+        counts[m["status"]] += 1
+    stack = build_stack(mappings, {}, size_band, industry)
+    perks = build_perks(mappings, perk_categories, size_band)
+
+    def examples(status, n=5):
+        out = []
+        for m in sorted(mappings, key=lambda m: m["ticker"]):
+            if m["status"] != status:
+                continue
+            if status == "mapped":
+                detail = (m["offerings"][0]["product"]
+                          if m.get("offerings") else "")
+            elif status == "indirect":
+                detail = (m["perk_assignments"][0]["perk"]
+                          if m.get("perk_assignments") else "")
+            else:
+                detail = m.get("note", "") or "no enterprise offering"
+            out.append({"ticker": m["ticker"], "vendor": m["name"],
+                        "detail": detail})
+            if len(out) == n:
+                break
+        return out
+
+    tiers = [
+        {"tier": "tier1", "status": "mapped",
+         "companies": counts["mapped"],
+         "routable_annual_spend_usd":
+             stack["estimated_total_annual_spend_usd"],
+         "examples": examples("mapped")},
+        {"tier": "tier2", "status": "indirect",
+         "companies": counts["indirect"],
+         "routable_annual_spend_usd":
+             perks["estimated_perks_annual_spend_usd"],
+         "examples": examples("indirect")},
+        {"tier": "tier3", "status": "unmapped",
+         "companies": counts["unmapped"],
+         "routable_annual_spend_usd": 0,
+         "examples": examples("unmapped")},
+    ]
+    for t in tiers:
+        t["name"] = TIER_MEANING[t["tier"]]["name"]
+        t["meaning"] = TIER_MEANING[t["tier"]]["meaning"]
+    return {
+        "size_band": size_band,
+        "industry": industry,
+        "employees": SIZE_BANDS[size_band]["employees"],
+        "total_companies": len(mappings),
+        "tiers": tiers,
+    }
+
+
 def main():
     ap = argparse.ArgumentParser(description="S&P 500 Corporate Stack builder")
     ap.add_argument("--size", choices=list(SIZE_BANDS),
@@ -244,15 +372,41 @@ def main():
     ap.add_argument("--format", choices=["text", "json"], default="text")
     ap.add_argument("--coverage", action="store_true",
                     help="print the honest coverage report and exit")
+    ap.add_argument("--relativity", action="store_true",
+                    help="print the three-tier relativity report and exit")
     ap.add_argument("--emit-demo-data", action="store_true",
                     help="write demo/stack_data.js for all bands x industries")
     ap.add_argument("--out", default=os.path.join(HERE, "demo", "stack_data.js"))
     args = ap.parse_args()
 
-    mappings, categories = load_data()
+    vendor_map, categories, perk_categories = load_data()
+    mappings = vendor_map["mappings"]
 
     if args.coverage:
         print(json.dumps(coverage_report(mappings), indent=2))
+        return
+
+    if args.relativity:
+        size = args.size or "smb"
+        industry = args.industry or "technology"
+        rep = relativity_report(mappings, perk_categories, size, industry)
+        if args.format == "json":
+            print(json.dumps(rep, indent=2))
+            return
+        print("S&P 500 Corporate Stack: three-tier relativity")
+        print("%s | %s | %d employees" % (
+            SIZE_BANDS[size]["label"], industry, rep["employees"]))
+        print()
+        for t in rep["tiers"]:
+            print("%s: %d companies" % (t["name"], t["companies"]))
+            print("  Routable annual spend: $%s" % (
+                f"{t['routable_annual_spend_usd']:,}"))
+            print("  %s" % t["meaning"])
+            print("  Examples:")
+            for e in t["examples"]:
+                print("    %-6s %-28s %s" % (
+                    e["ticker"], e["vendor"][:28], e["detail"][:60]))
+            print()
         return
 
     if args.emit_demo_data:
@@ -265,6 +419,8 @@ def main():
             "size_bands": SIZE_BANDS,
             "industries": INDUSTRIES,
             "coverage": coverage_report(mappings),
+            "relativity": relativity_report(mappings, perk_categories),
+            "perk_categories": perk_categories,
         }
         os.makedirs(os.path.dirname(args.out), exist_ok=True)
         with open(args.out, "w") as f:
@@ -277,6 +433,8 @@ def main():
     if not args.size or not args.industry:
         ap.error("--size and --industry are required (or use --coverage)")
     result = build_stack(mappings, categories, args.size, args.industry)
+    perks = build_perks(mappings, perk_categories, args.size)
+    result["perks"] = perks
     if args.format == "json":
         print(json.dumps(result, indent=2))
         return
@@ -293,6 +451,15 @@ def main():
     if result["uncovered_categories"]:
         print("\nUncovered (no S&P 500 vendor mapped): %s" % (
             ", ".join(result["uncovered_categories"])))
+    print("\nEmployee perks shelf (tier 2): %d categories | %d vendors" % (
+        perks["perk_categories_covered"], perks["perks_vendors_used"]))
+    print("Est. annual perks spend: $%s" % (
+        f"{perks['estimated_perks_annual_spend_usd']:,}"))
+    print()
+    for p in perks["perks"]:
+        print("  %-22s %-6s %-28s $%s" % (
+            p["perk_category_name"][:22], p["ticker"], p["perk"][:28],
+            f"{p['estimated_annual_spend_usd']:,}"))
 
 
 if __name__ == "__main__":

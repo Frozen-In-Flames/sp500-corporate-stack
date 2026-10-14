@@ -148,6 +148,26 @@
   Not investment advice.</p>
 </footer>
 
+<section class="v2">
+  <h2>The three tiers (v0.3.0)</h2>
+  <p class="sub">Not every index company can receive corporate spend, and the
+  model says so out loud. Tier 1 is direct enterprise procurement. Tier 2 is
+  employee-directed consumer spend through the perks shelf, reaching the
+  consumer-only companies the enterprise stack cannot touch. Tier 3 is the
+  honest boundary: no routable spend. Naming it is what keeps the other two
+  tiers credible.</p>
+  <div class="cov" style="padding:0 0 16px">
+    <div class="bar" id="tierbar"></div>
+  </div>
+  <div id="tiercards" style="display:grid;gap:12px"></div>
+</section>
+
+<footer>
+  <p>Perks spend is estimated per employee per year across twelve perk
+  categories. The 32 indirect vendors are assigned to the categories they can
+  honestly serve as employee perks.</p>
+</footer>
+
 <script src="stack_data.js"></script>
 <script src="shelf_data.js"></script>
 <script src="workflow_transcript.js"></script>
@@ -221,6 +241,30 @@ render();
     }
     step();
   });
+})();
+
+/* v0.3.0 three-tier relativity visualization */
+(function(){
+  var rel = D._meta.relativity;
+  var colors = {tier1: "#4ade80", tier2: "#fbbf24", tier3: "#475569"};
+  var tot = rel.total_companies;
+  document.getElementById("tierbar").innerHTML = rel.tiers.map(function(t){
+    return '<div style="background:'+colors[t.tier]+";width:"+
+      (t.companies/tot*100)+'%"></div>';
+  }).join("");
+  document.getElementById("tiercards").innerHTML = rel.tiers.map(function(t){
+    var ex = t.examples.map(function(e){
+      return '<span class="tick">'+e.ticker+"</span> "+e.vendor;
+    }).join("<br>");
+    return '<div class="scard" style="border-left:4px solid '+colors[t.tier]+'">'+
+      '<div class="v">'+t.name+": "+t.companies+" companies</div>"+
+      '<div class="c">Routable annual spend: '+
+        (t.routable_annual_spend_usd
+          ? "$"+t.routable_annual_spend_usd.toLocaleString("en-US")
+          : "$0 (none)")+"</div>"+
+      '<div class="p">'+t.meaning+"</div>"+
+      '<div class="k">Examples:<br>'+ex+"</div></div>";
+  }).join("");
 })();
 </script>
 </body>

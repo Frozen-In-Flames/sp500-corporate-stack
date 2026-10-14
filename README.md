@@ -7,6 +7,21 @@ insurance, shipping, travel, legal, and the rest). Route that spend through
 index vendors and the operating budget becomes diversified revenue for S&P 500
 companies, which is the flywheel described in [flywheel.md](flywheel.md).
 
+## v0.3.0: the three tiers
+
+The relativity between the three coverage tiers is now explicit and complete.
+Every one of the 278 mapped vendors carries a `consumer_channels` field:
+their consumer-facing presence (157 have one, 121 are honestly empty, pure
+B2B). The 32 indirect vendors are a first-class Consumer & Perks shelf across
+12 perk categories (cruises, dining, streaming, apparel, footwear, beauty,
+home goods, beverages, snacks, packaged foods, toys and games, wearables).
+The builder now prints an employee-perks shelf alongside the enterprise stack,
+and `python3 stack_builder.py --relativity` prints the three-tier report:
+tier 1 is direct enterprise procurement, tier 2 is employee-directed consumer
+spend reaching companies the enterprise stack cannot touch, tier 3 is the 190
+companies with no routable spend, the named boundary that keeps the other two
+tiers honest. The demo page has a three-tier visualization.
+
 ## v0.2.0: the shelf is executable
 
 Twelve S&P 500 vendors now sit behind one shared adapter interface in
@@ -55,6 +70,7 @@ categories.
 python3 stack_builder.py --size smb --industry technology
 python3 stack_builder.py --size enterprise --industry retail --format json
 python3 stack_builder.py --coverage
+python3 stack_builder.py --relativity
 ```
 
 Example: a 200-person tech SMB gets 55 categories covered across 46 index
@@ -71,7 +87,9 @@ industry to explore the recommended stack.
   sub-industry.
 - `data/categories.json`: 61 business capability categories.
 - `data/vendor_map.json`: per-company mapping with status
-  (mapped/indirect/unmapped), specific products, and notes.
+  (mapped/indirect/unmapped), specific products, notes, `consumer_channels`
+  for mapped vendors, and `perk_assignments` for indirect vendors.
+- `data/perk_categories.json`: the 12 Consumer & Perks shelf categories.
 - `stack_builder.py`: the recommendation engine and spend model.
 - `demo/`: static demo page plus generated data.
 - `flywheel.md`: the business model, including an honest account of where the

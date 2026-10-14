@@ -1,0 +1,76 @@
+{
+  "categories": [
+    {
+      "id": "cruises",
+      "name": "Cruises",
+      "description": "Corporate cruise events and employee cruise discounts",
+      "spend_per_employee": 40
+    },
+    {
+      "id": "dining",
+      "name": "Dining",
+      "description": "Restaurant catering, group meals, and meal perks",
+      "spend_per_employee": 120
+    },
+    {
+      "id": "streaming",
+      "name": "Streaming",
+      "description": "Video streaming subscriptions as an employee perk",
+      "spend_per_employee": 60
+    },
+    {
+      "id": "apparel",
+      "name": "Apparel",
+      "description": "Branded apparel and clothing discounts",
+      "spend_per_employee": 80
+    },
+    {
+      "id": "footwear",
+      "name": "Footwear",
+      "description": "Footwear programs and discounts",
+      "spend_per_employee": 40
+    },
+    {
+      "id": "beauty",
+      "name": "Beauty & Personal Care",
+      "description": "Beauty and personal care product perks",
+      "spend_per_employee": 30
+    },
+    {
+      "id": "home_goods",
+      "name": "Home Goods",
+      "description": "Home furnishings and decor discounts",
+      "spend_per_employee": 40
+    },
+    {
+      "id": "beverages",
+      "name": "Beverages",
+      "description": "Office and break-room beverage programs",
+      "spend_per_employee": 50
+    },
+    {
+      "id": "snacks",
+      "name": "Snacks & Confectionery",
+      "description": "Snack programs and confectionery perks",
+      "spend_per_employee": 60
+    },
+    {
+      "id": "packaged_foods",
+      "name": "Packaged Foods",
+      "description": "Pantry staples and packaged food programs",
+      "spend_per_employee": 40
+    },
+    {
+      "id": "toys_games",
+      "name": "Toys & Games",
+      "description": "Family toys and games perks",
+      "spend_per_employee": 15
+    },
+    {
+      "id": "wearables",
+      "name": "Wearables & Electronics",
+      "description": "Wearable tech and electronics discounts",
+      "spend_per_employee": 25
+    }
+  ]
+}
